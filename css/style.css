@@ -29,3 +29,8 @@ p.notyet {
 	font-weight: bold;
 	color: yellow;
 }
+
+p a {
+	text-decoration: none;
+	color: inherit;
+}
