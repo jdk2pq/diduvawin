@@ -1,7 +1,7 @@
 body {
 	text-align:center;
 	margin-top:15%;
-	background: url(../images/champions.jpg) no-repeat center center fixed;
+	background: url(../images/champions.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -33,4 +33,13 @@ p.notyet {
 p a {
 	text-decoration: none;
 	color: inherit;
+}
+
+#credit {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	text-align: center;
+	background-color: white;
 }
