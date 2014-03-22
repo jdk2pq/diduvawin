@@ -1,6 +1,15 @@
 body {
 	text-align:center;
 	margin-top:15%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.accchampionship {
+	text-align:center;
+	margin-top:15%;
 	background: url(../images/champions.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
