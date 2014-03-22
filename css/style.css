@@ -7,6 +7,15 @@ body {
 	background-size: cover;
 }
 
+.first {
+	text-align:center;
+	margin-top:15%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 .accchampionship {
 	text-align:center;
 	margin-top:15%;
