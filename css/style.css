@@ -1,24 +1,20 @@
 body {
-	text-align:center;
-	margin-top:15%;
+	text-align: center;
+	margin-top: 15%;
+}
+
+.roundof64 {
+	background: url(../images/cavman.jpeg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
 
-.first {
-	text-align:center;
-	margin-top:15%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+.roundof32 {
 }
 
 .accchampionship {
-	text-align:center;
-	margin-top:15%;
 	background: url(../images/champions.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -31,19 +27,19 @@ p {
 }
 
 p.yes {
-	font-size:120pt;
+	font-size: 120pt;
 	font-weight: bold;
 	color: green;
 }
 
 p.no {
-	font-size:120pt;
+	font-size: 120pt;
 	font-weight: bold;
 	color: red;
 }
 
 p.notyet {
-	font-size:120pt;
+	font-size: 120pt;
 	font-weight: bold;
 	color: yellow;
 }
@@ -57,7 +53,23 @@ p a {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 200px;
+	width: 250px;
 	text-align: center;
 	background-color: white;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	text-align: center;
+	background-color: white;
+}
+
+#share {
+	text-align: center;
+	margin-top: 15%;
+    width: 100px;
+    margin: auto;
 }
