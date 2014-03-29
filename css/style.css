@@ -14,6 +14,13 @@
 	background-size: cover;
 }
 
+.sweetsixteen {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 .accchampionship {
 	background: url(../images/champions.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
