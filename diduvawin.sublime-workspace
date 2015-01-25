@@ -1,0 +1,477 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"boardmem",
+				"board_member"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 3109,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "roundof32.html",
+			"settings":
+			{
+				"buffer_size": 3240,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "roundof64.html",
+			"settings":
+			{
+				"buffer_size": 2693,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "indextest.html",
+			"settings":
+			{
+				"buffer_size": 2787,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "theaccchampionship.html",
+			"settings":
+			{
+				"buffer_size": 2143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 3220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CNAME",
+			"settings":
+			{
+				"buffer_size": 13,
+				"line_ending": "Unix",
+				"name": "diduvawin.com"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 107.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: expect { expression }.to something"
+			],
+			[
+				"",
+				"Convert Case: Title Case"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jake/Downloads/7letter.pdf",
+		"/Users/jake/Downloads/test.jpg",
+		"/Users/jake/vocal/app/views/imports/index.html.erb",
+		"/Users/jake/vocal/app/views/devise/sessions/new.html.erb",
+		"/Users/jake/vocal/app/assets/stylesheets/application.css",
+		"/Users/jake/vocal/app/views/layouts/application.html.erb",
+		"/Users/jake/vocal/spec/requests/board_members_spec.rb",
+		"/Users/jake/vocal/spec/factories/users.rb",
+		"/Users/jake/vocal/spec/support/devise_macros.rb",
+		"/Users/jake/vocal/config/routes.rb",
+		"/Users/jake/vocal/config/initializers/active_admin.rb",
+		"/Users/jake/vocal/app/admin/import.rb",
+		"/Users/jake/vocal/spec/spec_helper.rb",
+		"/Users/jake/vocal/.rspec",
+		"/Users/jake/vocal/app/admin/key.rb",
+		"/Users/jake/vocal/Gemfile",
+		"/Users/jake/vocal/config/database.yml",
+		"/Users/jake/vocal/app/views/imports/new.html.erb",
+		"/Users/jake/vocal/app/assets/stylesheets/active_admin.css.scss",
+		"/Users/jake/vocal/spec/controllers/board_members_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/custom_fields_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/donations_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/donors_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/imports_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/keys_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/members_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/organizations_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/peer_supports_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/tech_assists_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/trainings_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/users_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/volunteers_controller_spec.rb",
+		"/Users/jake/vocal/spec/controllers/workshops_controller_spec.rb",
+		"/Users/jake/vocal/config/initializers/devise.rb",
+		"/Users/jake/vocal/Rakefile",
+		"/Users/jake/vocal/.rubyversion",
+		"/Users/jake/vocal/db/migrate/20140217220824_create_keys_vars.rb",
+		"/Users/jake/vocal/app/models/key_var.rb",
+		"/Users/jake/vocal/db/schema.rb",
+		"/Users/jake/vocal/app/admin/member.rb",
+		"/Users/jake/vocal/app/models/member.rb",
+		"/Users/jake/vocal/test/functional/board_members_controller_test.rb",
+		"/Users/jake/vocal/lib/board_member.rb",
+		"/Users/jake/vocal/app/controllers/key_vars_controller.rb",
+		"/Users/jake/.Trash/schema.rb",
+		"/Users/jake/vocal/app/models/custom_field.rb",
+		"/Users/jake/vocal/app/views/keys/_form.html.erb",
+		"/Users/jake/vocal/app/views/keys/index.html.erb",
+		"/Users/jake/vocal/app/views/keys/new.html.erb",
+		"/Users/jake/vocal/app/views/keys/show.html.erb",
+		"/Users/jake/vocal/spec/testtesttestboardmember.rb",
+		"/Users/jake/vocal/lib/BoardMember.rb",
+		"/Users/jake/jdk2pq.github.io/_config.yml",
+		"/Users/jake/jdk2pq.github.io/_layouts/post.html",
+		"/Users/jake/jdk2pq.github.io/.gitignore"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/jake/vocal",
+			"/Users/jake/vocal/app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"decode",
+			"created",
+			"uni",
+			"university",
+			"author",
+			"ga.src",
+			"drop",
+			"  #   config.namespace :admin do |admin|\n  #     admin.build_menu :utility_navigation do |menu|\n  #       menu.add label: \"My Great Website\", url: \"http://www.mygreatwebsite.com\", html_options: { target: :blank }\n  #       admin.add_logout_button_to_menu menu\n  #     end\n  #   end",
+			">\n",
+			"bootstrap",
+			"keys",
+			"Key",
+			"keys",
+			"environment",
+			"keys",
+			"key"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 3109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "roundof32.html",
+					"settings":
+					{
+						"buffer_size": 3240,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2897,
+								2942
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "roundof64.html",
+					"settings":
+					{
+						"buffer_size": 2693,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2677,
+								2600
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 344.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "indextest.html",
+					"settings":
+					{
+						"buffer_size": 2787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2787
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 354.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "theaccchampionship.html",
+					"settings":
+					{
+						"buffer_size": 2143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2067,
+								2127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/style.css",
+					"settings":
+					{
+						"buffer_size": 3220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								976,
+								982
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 457.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "CNAME",
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"auto_name": "diduvawin.com",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 147.0,
+	"status_bar_visible": true
+}
