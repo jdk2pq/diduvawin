@@ -7,19 +7,19 @@ p {
 	font-family: Arial, sans-serif;
 }
 
-p.yes {
+p.YES {
 	font-size: 120pt;
 	font-weight: bold;
 	color: green;
 }
 
-p.no {
+p.NO {
 	font-size: 120pt;
 	font-weight: bold;
 	color: red;
 }
 
-p.notyet {
+p.NOTYET {
 	font-size: 120pt;
 	font-weight: bold;
 	color: yellow;
