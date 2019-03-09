@@ -3,8 +3,8 @@ import { Request, Response } from 'express';
 import * as moment from 'moment';
 import { ESPNTeamID, games } from './config';
 import * as request from 'request';
-import maxBy = require('lodash/maxBy');
 import { ESPNScoreboardJSON } from './interfaces';
+import maxBy = require('lodash/maxBy');
 
 const app = express();
 const today = moment();
