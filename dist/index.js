@@ -34,9 +34,16 @@ app.get('/', function (req, res) {
                 yesNoOrNotYet = 'NO';
             }
         }
+        var uvaScore = +bodyO.competitions[0].competitors.find(function (competitor) { return competitor.id === UVABasketballID; }).score;
+        var rawCompetitor = bodyO.competitions[0].competitors.find(function (competitor) { return competitor.id !== UVABasketballID; });
+        var competitor = rawCompetitor.team.abbreviation;
+        var competitorScore = +rawCompetitor.score;
         res.render('pages/index', {
             link: bodyO.links.find(function (link) { return link.rel[0] === 'summary'; }).href,
-            yesNoOrNotYet: yesNoOrNotYet
+            yesNoOrNotYet: yesNoOrNotYet,
+            uvaScore: uvaScore,
+            competitor: competitor,
+            competitorScore: competitorScore
         });
     });
 });

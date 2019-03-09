@@ -7,7 +7,7 @@ exports.games = [
         gameId: 401082779
     },
     {
-        date: moment.tz('2019-03-09 16:00', 'America/New_York'),
+        date: moment.tz('2019-03-04 16:00', 'America/New_York'),
         gameId: 401082780
     }
 ];

@@ -13,8 +13,12 @@ interface ESPNScoreboardLinkJSON {
 
 interface ESPNScoreboardCompetitorsJSON {
     linescores: Array<{value: number}>;
+    score: string;
     winner: boolean;
     id: string;
+    team: {
+      abbreviation: string;
+    }
 }
 
 interface ESPNScoreboardCompetitionJSON {
@@ -83,9 +87,16 @@ app.get('/', (req: Request, res: Response) => {
                 yesNoOrNotYet = 'NO';
             }
         }
+        const uvaScore = +bodyO.competitions[0].competitors.find((competitor) => competitor.id === UVABasketballID).score;
+        const rawCompetitor = bodyO.competitions[0].competitors.find((competitor) => competitor.id !== UVABasketballID);
+        const competitor = rawCompetitor.team.abbreviation;
+        const competitorScore = +rawCompetitor.score;
         res.render('pages/index', {
             link: bodyO.links.find((link) => link.rel[0] === 'summary').href,
-            yesNoOrNotYet
+            yesNoOrNotYet,
+            uvaScore,
+            competitor,
+            competitorScore
         });
     });
 });

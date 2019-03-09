@@ -7,40 +7,24 @@ p {
 	font-family: Arial, sans-serif;
 }
 
-p.YES {
+#result {
 	font-size: 120pt;
 	font-weight: bold;
+}
+
+.YES {
 	color: green;
 }
 
-p.NO {
-	font-size: 120pt;
-	font-weight: bold;
+.NO {
 	color: red;
 }
 
-p.NOTYET {
-	font-size: 120pt;
-	font-weight: bold;
+.NOTYET {
 	color: yellow;
 }
 
 p a {
 	text-decoration: none;
 	color: inherit;
-}
-
-#credit {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 250px;
-	text-align: center;
-	background-color: white;
-}
-
-#share {
-	text-align: center;
-	width: 100px;
-	margin: auto;
 }
