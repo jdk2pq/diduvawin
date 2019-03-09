@@ -9,20 +9,21 @@
   "main": "node dist/index.ts",
   "scripts": {
     "build-ts": "tsc",
-    "postinstall": "npm run build-ts",
+    "deploy": "git push heroku master",
+    "postinstall": "yarn build-ts",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "start": "npm run serve",
+    "start": "yarn serve",
     "serve": "node dist/index.js",
     "watch-node": "nodemon dist/index.js",
     "watch-ts": "tsc -w"
   },
   "dependencies": {
-    "ejs": "2.5.6",
-    "express": "4.15.2",
-    "lodash": "^4.17.4",
-    "moment": "^2.18.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
-    "request": "^2.81.0",
+    "request": "^2.88.0",
     "ts-lint": "^4.5.1",
     "typescript": "^3.3.3333"
   },
