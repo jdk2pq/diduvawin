@@ -5,14 +5,15 @@ var moment = require("moment");
 var config_1 = require("./config");
 var request = require("request");
 var maxBy = require("lodash/maxBy");
+moment.tz.setDefault(config_1.timezone);
 var app = express();
-var today = moment();
 var getUrl = function (gameId) {
     return "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/" + gameId;
 };
 var getMostRecentGameId = function () {
+    var today = moment();
     return maxBy(config_1.games.filter(function (game) {
-        return game.date.valueOf() <= today.valueOf();
+        return game.date.isBefore(today);
     }), function (game) { return game.date.valueOf(); }).gameId.toString();
 };
 app.set('port', (process.env.PORT || 5000));

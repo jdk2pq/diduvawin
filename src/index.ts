@@ -1,13 +1,14 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
 import * as moment from 'moment';
-import { ESPNTeamID, games } from './config';
+import { ESPNTeamID, games, timezone } from './config';
 import * as request from 'request';
 import { ESPNScoreboardJSON } from './interfaces';
 import maxBy = require('lodash/maxBy');
 
+moment.tz.setDefault(timezone);
+
 const app = express();
-const today = moment();
 
 /**
  * Returns the ESPN API URL to call, using the gameID as a parameter
@@ -21,9 +22,10 @@ const getUrl = (gameId: string): string => {
  * Returns the most recent game that is not in the future.
  */
 const getMostRecentGameId = (): string => {
+  const today = moment();
   return maxBy(
     games.filter( (game) => {
-      return game.date.valueOf() <= today.valueOf();
+      return game.date.isBefore(today);
     }),
     (game) => game.date.valueOf(),
   ).gameId.toString();
