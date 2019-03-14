@@ -52,8 +52,9 @@ app.get('/', (req: Request, res: Response) => {
     const rawCompetitor = bodyO.competitions[0].competitors.find((competitor) => competitor.id !== ESPNTeamID);
     const competitor = rawCompetitor.team.abbreviation;
     const competitorScore = +rawCompetitor.score;
+    const summaryLink = bodyO.links.find((link) => link.rel[0] === 'summary');
     res.render('pages/index', {
-      link: bodyO.links.find((link) => link.rel[0] === 'summary').href,
+      link: summaryLink ? summaryLink.href : 'http://www.espn.com/mens-college-basketball/team/_/id/258/virginia-cavaliers',
       yesNoOrNotYet,
       score,
       competitor,
