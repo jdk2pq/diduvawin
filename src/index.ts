@@ -37,7 +37,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', (req: Request, res: Response) => {
-  request(getUrl(getMostRecentGameId()), (errorO, responseO, bodyOStr: string) => {
+  const mostRecentGameId = getMostRecentGameId();
+  request(getUrl(mostRecentGameId), (errorO, responseO, bodyOStr: string) => {
     let bodyO: ESPNScoreboardJSON = JSON.parse(bodyOStr);
     let yesNoOrNotYet = 'NOT YET';
     if (bodyO.status.type.completed) {
@@ -52,9 +53,9 @@ app.get('/', (req: Request, res: Response) => {
     const rawCompetitor = bodyO.competitions[0].competitors.find((competitor) => competitor.id !== ESPNTeamID);
     const competitor = rawCompetitor.team.abbreviation;
     const competitorScore = +rawCompetitor.score;
-    const summaryLink = bodyO.links.find((link) => link.rel[0] === 'summary');
+    const summaryLink = `http://www.espn.com/mens-college-basketball/game?gameId=${mostRecentGameId}`;
     res.render('pages/index', {
-      link: summaryLink ? summaryLink.href : 'http://www.espn.com/mens-college-basketball/team/_/id/258/virginia-cavaliers',
+      link: summaryLink,
       yesNoOrNotYet,
       score,
       competitor,
