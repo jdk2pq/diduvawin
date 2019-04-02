@@ -41,4 +41,8 @@ export const games: IGame[] = [
     date: moment('2019-03-30 20:49'),
     gameId: 401123383
   },
+  {
+    date: moment('2019-04-06 18:09'),
+    gameId: 401123375
+  },
 ];
