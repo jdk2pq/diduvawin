@@ -8,9 +8,9 @@
   },
   "main": "node dist/index.ts",
   "scripts": {
-    "build-ts": "tsc",
+    "build": "tsc && yarn ncp src/public dist/public && yarn ncp src/views dist/views",
     "deploy": "git push heroku master",
-    "postinstall": "yarn build-ts",
+    "postinstall": "yarn build",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "start": "yarn serve",
     "serve": "node dist/index.js",
@@ -18,14 +18,14 @@
     "watch-ts": "tsc -w"
   },
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "lodash": "^4.17.11",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.23",
+    "moment-timezone": "^0.5.26",
     "request": "^2.88.0",
-    "tslint": "^5.13.1",
-    "typescript": "^3.3.3333"
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,8 @@
     "@types/lodash": "^4.14.122",
     "@types/moment-timezone": "^0.5.10",
     "@types/request": "^2.48.1",
-    "prettier": "^1.16.4",
+    "ncp": "^2.0.0",
+    "prettier": "^1.18.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1"
   }

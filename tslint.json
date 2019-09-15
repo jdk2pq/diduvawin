@@ -16,7 +16,8 @@
     "no-console": false,
     "trailing-comma": false,
     "interface-name": false,
-    "no-string-literal": false
+    "no-string-literal": false,
+    "prettier": true
   },
   "jsRules": {
     "max-line-length": {
@@ -24,6 +25,7 @@
     }
   },
   "rulesDirectory": [
-    "node_modules/tslint-plugin-prettier"
+    "node_modules/tslint-plugin-prettier",
+    "tslint-plugin-prettier"
   ]
 }

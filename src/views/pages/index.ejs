@@ -7,11 +7,11 @@
 <div id="fb-root"></div>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=625960707491649&autoLogAppEvents=1"></script>
 <div class="center">
-  <p id="result" class="<%= yesNoOrNotYet === 'NOT YET' ? 'NOTYET' : yesNoOrNotYet %>">
-    <a href="<%= link %>"><%= yesNoOrNotYet %></a>
+  <p id="result" class="<%= status.replace(/ /, '') %>">
+    <a href="<%= summaryLink %>"><%= status %></a>
   </p>
   <p id="score>">
-    UVA: <%= score %> - <%= competitor %>: <%= competitorScore %>
+    <%= summaryLink.includes('basketball') ? 'Men\'s Basketball' : 'Football' %> ▸ UVA: <%= score %> - <%= competitor %>: <%= competitorScore %>
   </p>
   <div class="fb-like" data-href="https://www.diduvawin.com/" data-width="20" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
 </div>
