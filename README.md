@@ -1,6 +1,6 @@
 # Did UVA Win?
 
-<img height="40%" src="https://i.imgur.com/KSeFkJy.png">
+<img height="40%" width="40%" src="https://i.imgur.com/KSeFkJy.png">
 
 ## Wahoo-what?
 Want to know if UVA won in basketball and football? [DidUVAWin.com](diduvawin.com) has the answer!
