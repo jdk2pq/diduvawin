@@ -3,12 +3,12 @@
 <img height="40%" width="40%" src="https://i.imgur.com/KSeFkJy.png">
 
 ## Wahoo-what?
-Want to know if UVA won in basketball and football? [DidUVAWin.com](diduvawin.com) has the answer!
+Want to know if UVA won in basketball and football? [DidUVAWin.com](http://diduvawin.com) has the answer!
 
-[DidUVAWin.com](diduvawin.com) shows a big "YES", "NO", or "NOT YET" for all UVA basketball and football games. While a game's still in play, it shows "NOT YET", updating the score shown with each refresh of the page. Once a game is finished, it most likely changes to "YES"...but it can also change to "NO".
+[DidUVAWin.com](http://diduvawin.com) shows a big "YES", "NO", or "NOT YET" for all UVA basketball and football games. While a game's still in play, it shows "NOT YET", updating the score shown with each refresh of the page. Once a game is finished, it most likely changes to "YES"...but it can also change to "NO".
 
 ## Wahoo-why?
-Want to always know how UVA Men's Basketball and Football is doing? Change your homepage to [DidUVAWin.com](diduvawin.com)! Missed the game and need to quickly find out how your favorite team did, but ESPN takes too long to load? Check [DidUVAWin.com](diduvawin.com)! Want to support a fellow 'Hoo that developed this application? Use [DidUVAWin.com](diduvawin.com)!
+Want to always know how UVA Men's Basketball and Football is doing? Change your homepage to [DidUVAWin.com](http://diduvawin.com)! Missed the game and need to quickly find out how your favorite team did, but ESPN takes too long to load? Check [DidUVAWin.com](http://diduvawin.com)! Want to support a fellow 'Hoo that developed this application? Use [DidUVAWin.com](http://diduvawin.com)!
 
 ## Wa-who?-wa
 This is an unofficial UVA Men's Basketball and Football project made by Jake Kenneally. It is not affiliated with the University of Virginia or Virginia Athletics in any way.
