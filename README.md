@@ -13,7 +13,7 @@ Want to always know how UVA Men's Basketball and Football is doing? Change your 
 ## Wa-who?-wa
 This is an unofficial UVA Men's Basketball and Football project made by Jake Kenneally. It is not affiliated with the University of Virginia or Virginia Athletics in any way.
 
-If you're interested in building a similar page for your school, please get in contact!
+If you're interested in building a similar page for your school, please get in contact (and feel free to use this app as your starting point).
 
 ## Wa-how?-wa
 A Node.js app using [Express](http://expressjs.com/) and built on Heroku.
