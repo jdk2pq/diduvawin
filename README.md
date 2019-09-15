@@ -20,7 +20,7 @@ A Node.js app using [Express](http://expressjs.com/) and built on Heroku.
 
 The ESPN ID for UVA is stored in `constants.ts`. Upon load, the app makes two requests for schedules, one for football and one for men's basketball, and determines which game is the most recent game that is not in the future. Then, it figures out if the game is still ongoing. If it is, the app shows "NOT YET" and the score at the bottom of the page. Otherwise, it checks to see if UVA was the winner by matching on the ID in `constants.ts` and shows the appropriate message and scores from the game.
 
-### Developing
+### Running locally
 To run this application locally, first run:
 
     yarn
