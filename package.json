@@ -1,7 +1,7 @@
 {
   "name": "diduvawin",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A site to quickly find out if UVA won in Basketball and Football",
   "engines": {
     "node": "10.9.0"
