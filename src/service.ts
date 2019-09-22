@@ -34,7 +34,8 @@ export const didWeWin = (req: Request, res: Response) => {
                 // The winner may not be available yet if the game completed within the last few minutes
                 if (winner) {
                     if (winner.id === ESPN_TEAM_ID) {
-                        status
+                        status = 'YES';
+                    } else {
                         status = 'NO';
                     }
                 }
