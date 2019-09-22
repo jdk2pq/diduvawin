@@ -3,8 +3,14 @@ import request from 'request';
 
 import { ESPN_TEAM_ID } from './constants';
 import { getMostRecentEvent } from './helpers';
-import { getScheduleUrl } from './api';
-import { IESPNEvent, IESPNSchedule } from './interfaces';
+import { getCurrentGameUrl, getScheduleUrl } from './api';
+import {
+	IESPNCurrentScoreboardCompetitorsJSON,
+	IESPNEvent,
+	IESPNSchedule,
+	IESPNScoreboardCompetitorsJSON,
+	IESPNScoreboardEvent
+} from './interfaces';
 
 /**
  * Render function for the root of the application.
@@ -30,20 +36,53 @@ export const didWeWin = (req: Request, res: Response) => {
                     status = 'NO';
                 }
             }
+            let score: number;
+            let competitorObject: IESPNScoreboardCompetitorsJSON | IESPNCurrentScoreboardCompetitorsJSON;
+            let competitor: string;
+            let competitorScore: number;
+            let us = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID);
+			const summaryLink = mostRecentEvent.links.find((link) => link.rel.includes('now') && link.rel.includes('desktop')).href;
 
-            const score = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID).score.value;
-            const competitorObject = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id !== ESPN_TEAM_ID);
-            const competitor = competitorObject.team.abbreviation;
-            const competitorScore = competitorObject.score.value;
-            const summaryLink = mostRecentEvent.links.find((link) => link.rel.includes('summary') && link.rel.includes('desktop')).href;
-
-            res.render('pages/index', {
-                summaryLink,
-                status,
-                score,
-                competitor,
-                competitorScore,
-            });
+			if (us.score) {
+            	score = us.score.value;
+				competitorObject = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id !== ESPN_TEAM_ID);
+				competitor = competitorObject.team.abbreviation;
+				competitorScore = competitorObject.score.value;
+				render(res, summaryLink, status, score, competitor, competitorScore);
+			} else {
+				request(
+					getCurrentGameUrl(
+						summaryLink.includes('basketball') ? 'basketball' : 'football',
+						mostRecentEvent.id
+					),
+					(err, response, body: string) => {
+						const event: IESPNScoreboardEvent = JSON.parse(body);
+						let us = event.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID);
+						score = +us.score;
+						competitorObject = event.competitions[0].competitors.find((competitor) => competitor.id !== ESPN_TEAM_ID);
+						competitor = competitorObject.team.abbreviation;
+						competitorScore = +competitorObject.score;
+						render(res, summaryLink, status, score, competitor, competitorScore);
+					}
+				);
+			}
         });
     });
 };
+
+export const render = (
+	res: Response,
+	summaryLink: string,
+	status: string,
+	score: number,
+	competitor: string,
+	competitorScore: number
+) => {
+	res.render('pages/index', {
+		summaryLink,
+		status,
+		score,
+		competitor,
+		competitorScore,
+	});
+}

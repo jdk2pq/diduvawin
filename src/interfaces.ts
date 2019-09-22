@@ -134,3 +134,91 @@ export interface IESPNSchedule {
   }
   timestamp: string;
 }
+
+
+export interface IESPNScoreboardEvent {
+	competitions: Array<IESPNCurrentCompetitionJSON>;
+	date: string;
+	id: number;
+	links: IESPNScoreboardLinkJSON[];
+	name: string;
+	season: {
+		year: number;
+		displayName: string;
+	}
+	seasonType: {
+		id: string;
+		type: number;
+		name: string;
+		abbreviation: string;
+	}
+	shortName: string;
+	timeValid: boolean;
+	week: {
+		number: number;
+		text: string;
+	}
+	status: {
+		clock: number;
+		displayClock: string;
+		period: number;
+		type: {
+			completed: boolean;
+			description: string;
+			detail: string;
+			id: string;
+			name: string;
+			shortDetail: string;
+			state: string;
+		}
+	};
+}
+
+
+export interface IESPNCurrentCompetitionJSON {
+	attendance: number;
+	boxscoreAvailable: boolean;
+	competitors: Array<IESPNCurrentScoreboardCompetitorsJSON>;
+	date: string;
+	id: string;
+	neutralSite: boolean;
+	notes: Array<any>;
+	status: {
+		clock: number;
+		displayClock: string;
+		period: string;
+		type: {
+			completed: boolean;
+			description: string;
+			detail: string;
+			id: string;
+			name: string;
+			shortDetail: string;
+			state: string;
+		}
+	};
+	ticketsAvailable: boolean;
+	timeValid: boolean;
+	type: {
+		id: string;
+		text: string;
+		abbreviation: string;
+	};
+	venue: {
+		address: {
+			city: string;
+			state: string;
+			zipCode: string;
+		};
+		fullName: string;
+	}
+}
+
+export interface IESPNCurrentScoreboardCompetitorsJSON {
+	score: string;
+	winner: boolean;
+	id: string;
+	team: {
+		abbreviation: string;
+	}
+}
