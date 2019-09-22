@@ -1,3 +1,15 @@
+# 1.1.0
+## Added
+- New URL for getting the status of a game currently happening
+- Parent interface types for the JSON returned from the schedule and current game URLs
+
+## Changed
+- Tabs to spaces
+
+## Fixed
+- Bug while game a game is currently happening where the score was not available from the schedule URL and the application would break
+- Bug where the winner was not immediately available after a game finished, but the game was marked as "completed"
+
 # 1.0.0
 ## Added
 - this `CHANGELOG.md`
