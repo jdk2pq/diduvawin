@@ -30,11 +30,13 @@ export const didWeWin = (req: Request, res: Response) => {
             let status = 'NOT YET';
             if (mostRecentEvent.competitions[0].status.type.completed) {
                 const winner = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.winner);
-                if (winner.id === ESPN_TEAM_ID) {
-                    status = 'YES';
-                } else {
-                    status = 'NO';
-                }
+                if (winner) {
+                	if (winner.id === ESPN_TEAM_ID) {
+						status = 'YES';
+					} else {
+						status = 'NO';
+					}
+				}
             }
             let score: number;
             let competitorObject: IESPNScoreboardCompetitorsJSON | IESPNCurrentScoreboardCompetitorsJSON;
