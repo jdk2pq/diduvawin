@@ -46,7 +46,14 @@ export const didWeWin = (req: Request, res: Response) => {
             let competitorScore: number;
             let us: IESPNPastCompetitorsJSON | IESPNCurrentCompetitorsJSON =
                 mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID);
-            const summaryLink = mostRecentEvent.links.find((link) => link.rel.includes('now') && link.rel.includes('desktop')).href;
+            const summaryLinkFound = mostRecentEvent.links.find(
+                (link) => (link.rel.includes('now') || link.rel.includes('recap')) && link.rel.includes('desktop')
+            );
+            let summaryLink = '#';
+            if (summaryLinkFound) {
+                summaryLink = summaryLinkFound.href;
+            }
+
 
             if (us.score) {
                 // Game is complete

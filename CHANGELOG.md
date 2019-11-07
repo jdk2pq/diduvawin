@@ -1,3 +1,12 @@
+# Unreleased
+
+# 1.2.0
+## Changed
+- Removed node engine requirement from package.json
+
+## Fixed
+- Searching for Men's Basketball recap link doesn't crash the app
+
 # 1.1.0
 ## Added
 - New URL for getting the status of a game currently happening
