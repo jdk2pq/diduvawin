@@ -47,7 +47,7 @@ export const didWeWin = (req: Request, res: Response) => {
             let us: IESPNPastCompetitorsJSON | IESPNCurrentCompetitorsJSON =
                 mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID);
             const summaryLinkFound = mostRecentEvent.links.find(
-                (link) => (link.rel.includes('now') || link.rel.includes('recap')) && link.rel.includes('desktop')
+                (link) => (link.rel.includes('now') || link.rel.includes('recap') || link.rel.includes('live')) && link.rel.includes('desktop')
             );
             let summaryLink = '#';
             if (summaryLinkFound) {
