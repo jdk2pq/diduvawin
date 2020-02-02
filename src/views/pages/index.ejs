@@ -4,8 +4,6 @@
   <% include ../partials/header.ejs %>
 </head>
 <body>
-<div id="fb-root"></div>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=625960707491649&autoLogAppEvents=1"></script>
 <div class="center">
   <p id="result" class="<%= status.replace(/ /, '') %>">
     <a href="<%= summaryLink %>"><%= status %></a>
@@ -13,7 +11,6 @@
   <p id="score>">
     <%= summaryLink.includes('basketball') ? 'Men\'s Basketball' : 'Football' %> ▸ UVA: <%= score %> - <%= competitor %>: <%= competitorScore %>
   </p>
-  <div class="fb-like" data-href="http://www.diduvawin.com/" data-width="20" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
 </div>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
