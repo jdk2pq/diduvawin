@@ -9,7 +9,7 @@
     <a href="<%= summaryLink %>"><%= status %></a>
   </p>
   <p id="score>">
-    <%= summaryLink.includes('basketball') ? 'Men\'s Basketball' : 'Football' %> ▸ UVA: <%= score %> - <%= competitor %>: <%= competitorScore %>
+    <%= summaryLink.includes('basketball') ? 'Men\'s Basketball' : 'Football' %> ▸ UVA: <%= score %> - <%= competitor %>: <%= competitorScore %> <%= locals.time ? `(${time})` : '' %>
   </p>
 </div>
 

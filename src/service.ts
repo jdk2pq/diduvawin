@@ -26,11 +26,13 @@ export const didWeWin = (req: Request, res: Response) => {
         request(getScheduleUrl('basketball'), (basketballError, basketballResponse, basketballBody: string) => {
             const footballSchedule: IESPNSchedule = JSON.parse(footballBody);
             const basketballSchedule: IESPNSchedule = JSON.parse(basketballBody);
-            const mostRecentEvent: IESPNPastEvent = getMostRecentEvent(footballSchedule.events.concat(basketballSchedule.events));
+            const mostRecentEvent: IESPNPastEvent = getMostRecentEvent(
+                footballSchedule.events.concat(basketballSchedule.events)
+            );
 
             let status = 'NOT YET';
             if (mostRecentEvent.competitions[0].status.type.completed) {
-                const winner = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.winner);
+                const winner = mostRecentEvent.competitions[0].competitors.find(competitor => competitor.winner);
                 // The winner may not be available yet if the game completed within the last few minutes
                 if (winner) {
                     if (winner.id === ESPN_TEAM_ID) {
@@ -40,26 +42,31 @@ export const didWeWin = (req: Request, res: Response) => {
                     }
                 }
             }
-            let score: number;
+            let score: number = 0;
             let competitorObject: IESPNCompetitorsJSON;
-            let competitor: string;
-            let competitorScore: number;
-            let us: IESPNPastCompetitorsJSON | IESPNCurrentCompetitorsJSON =
-                mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID);
+            let competitor: string = '';
+            let competitorScore: number = 0;
+            let us:
+                | IESPNPastCompetitorsJSON
+                | IESPNCurrentCompetitorsJSON = mostRecentEvent.competitions[0].competitors.find(
+                competitor => competitor.id === ESPN_TEAM_ID
+            );
             const summaryLinkFound = mostRecentEvent.links.find(
-                (link) => (link.rel.includes('now') || link.rel.includes('recap') || link.rel.includes('live')) && link.rel.includes('desktop')
+                link =>
+                    (link.rel.includes('now') || link.rel.includes('recap') || link.rel.includes('live')) &&
+                    link.rel.includes('desktop')
             );
             let summaryLink = '#';
             if (summaryLinkFound) {
                 summaryLink = summaryLinkFound.href;
             }
-
-
+            competitorObject = mostRecentEvent.competitions[0].competitors.find(
+                competitor => competitor.id !== ESPN_TEAM_ID
+            );
+            competitor = competitorObject.team.abbreviation;
             if (us.score) {
                 // Game is complete
                 score = us.score.value;
-                competitorObject = mostRecentEvent.competitions[0].competitors.find((competitor) => competitor.id !== ESPN_TEAM_ID);
-                competitor = competitorObject.team.abbreviation;
                 competitorScore = competitorObject.score.value;
                 render(res, summaryLink, status, score, competitor, competitorScore);
             } else {
@@ -70,13 +77,18 @@ export const didWeWin = (req: Request, res: Response) => {
                         mostRecentEvent.id
                     ),
                     (err, response, body: string) => {
-                        const event: IESPNCurrentEvent = JSON.parse(body);
-                        us = event.competitions[0].competitors.find((competitor) => competitor.id === ESPN_TEAM_ID);
-                        score = +us.score;
-                        competitorObject = event.competitions[0].competitors.find((competitor) => competitor.id !== ESPN_TEAM_ID);
-                        competitor = competitorObject.team.abbreviation;
-                        competitorScore = +competitorObject.score;
-                        render(res, summaryLink, status, score, competitor, competitorScore);
+                        let time;
+                        if (!err && response.statusCode === 200) {
+                            const event: IESPNCurrentEvent = JSON.parse(body);
+                            us = event.competitions[0].competitors.find(competitor => competitor.id === ESPN_TEAM_ID);
+                            score = +us.score;
+                            competitorObject = event.competitions[0].competitors.find(
+                                competitor => competitor.id !== ESPN_TEAM_ID
+                            );
+                            competitorScore = +competitorObject.score;
+                            time = event.status.type.shortDetail
+                        }
+                        render(res, summaryLink, status, score, competitor, competitorScore, time);
                     }
                 );
             }
@@ -90,7 +102,8 @@ export const render = (
     status: string,
     score: number,
     competitor: string,
-    competitorScore: number
+    competitorScore: number,
+    time?: string
 ) => {
     res.render('pages/index', {
         summaryLink,
@@ -98,5 +111,6 @@ export const render = (
         score,
         competitor,
         competitorScore,
+        time
     });
 };
