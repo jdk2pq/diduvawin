@@ -12,6 +12,6 @@ export const getMostRecentEvent = (events: Array<IESPNPastEvent>): IESPNPastEven
         events.filter((event: IESPNPastEvent) => {
             return moment(event.date).isBefore(today);
         }),
-        (game) => moment(game.date).valueOf(),
+        game => moment(game.date).valueOf()
     );
 };

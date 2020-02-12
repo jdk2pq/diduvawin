@@ -13,7 +13,7 @@ export interface IESPNCompetitorsJSON {
     id: string;
     team: {
         abbreviation: string;
-    }
+    };
 }
 
 export interface IESPNPastCompetitorsJSON extends IESPNCompetitorsJSON {
@@ -47,7 +47,7 @@ export interface IESPNCompetitionJSON {
             name: string;
             shortDetail: string;
             state: string;
-        }
+        };
     };
     ticketsAvailable: boolean;
     timeValid: boolean;
@@ -63,7 +63,7 @@ export interface IESPNCompetitionJSON {
             zipCode: string;
         };
         fullName: string;
-    }
+    };
 }
 
 export interface IESPNScoreboardCompetitionJSON extends IESPNCompetitionJSON {
@@ -83,19 +83,19 @@ export interface IESPNEvent {
     season: {
         year: number;
         displayName: string;
-    }
+    };
     seasonType: {
         id: string;
         type: number;
         name: string;
         abbreviation: string;
-    }
+    };
     shortName: string;
     timeValid: boolean;
     week: {
         number: number;
         text: string;
-    }
+    };
     status: {
         clock: number;
         displayClock: string;
@@ -108,7 +108,7 @@ export interface IESPNEvent {
             name: string;
             shortDetail: string;
             state: string;
-        }
+        };
     };
 }
 
@@ -155,6 +155,6 @@ export interface IESPNSchedule {
         seasonSummary: string;
         standingSummary: string;
         venueLink: string;
-    }
+    };
     timestamp: string;
 }

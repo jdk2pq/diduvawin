@@ -1,30 +1,30 @@
 .center {
-	text-align: center;
-	margin-top: 15%;
+    text-align: center;
+    margin-top: 15%;
 }
 
 p {
-	font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 #result {
-	font-size: 120pt;
-	font-weight: bold;
+    font-size: 120pt;
+    font-weight: bold;
 }
 
 .YES {
-	color: green;
+    color: green;
 }
 
 .NO {
-	color: red;
+    color: red;
 }
 
 .NOTYET {
-	color: #e6e600;
+    color: #e6e600;
 }
 
 p a {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
 }

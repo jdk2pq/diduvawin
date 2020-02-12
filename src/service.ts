@@ -53,7 +53,10 @@ export const didWeWin = (req: Request, res: Response) => {
             );
             const summaryLinkFound = mostRecentEvent.links.find(
                 link =>
-                    (link.rel.includes('now') || link.rel.includes('recap') || link.rel.includes('live') || link.rel.includes('summary')) &&
+                    (link.rel.includes('now') ||
+                        link.rel.includes('recap') ||
+                        link.rel.includes('live') ||
+                        link.rel.includes('summary')) &&
                     link.rel.includes('desktop')
             );
             let summaryLink = '#';
@@ -86,7 +89,7 @@ export const didWeWin = (req: Request, res: Response) => {
                                 competitor => competitor.id !== ESPN_TEAM_ID
                             );
                             competitorScore = +competitorObject.score;
-                            time = event.status.type.shortDetail
+                            time = event.status.type.shortDetail;
                         }
                         render(res, summaryLink, status, score, competitor, competitorScore, time);
                     }
@@ -111,6 +114,6 @@ export const render = (
         score,
         competitor,
         competitorScore,
-        time
+        time,
     });
 };
