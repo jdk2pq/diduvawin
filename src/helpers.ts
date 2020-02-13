@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import maxBy from 'lodash/maxBy';
 import minBy from 'lodash/minBy';
 
@@ -29,9 +29,9 @@ export const getNextEvent = (events: Array<IESPNPastEvent>): string => {
         game => moment(game.date).valueOf()
     );
     const nextDate = moment(nextEvent.date);
-    let date = nextDate.format('M/DD');
+    let date = nextDate.tz('America/New_York').format('M/DD');
     if (today.format('M/DD') === date) {
-        date = `today at ${nextDate.format('h:mma')}`;
+        date = `today at ${nextDate.tz('America/New_York').format('h:mma z')}`;
     } else {
         date = `on ${date}`;
     }
