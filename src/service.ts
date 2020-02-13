@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import request from 'request';
 
 import { ESPN_TEAM_ID } from './constants';
-import { getMostRecentEvent } from './helpers';
+import { getMostRecentEvent, getNextEvent } from './helpers';
 import { getCurrentGameUrl, getScheduleUrl } from './api';
 import {
     IESPNCompetitorsJSON,
@@ -24,13 +24,19 @@ import {
 export const didWeWin = (req: Request, res: Response) => {
     request(getScheduleUrl('football'), (footballError, footballResponse, footballBody: string) => {
         request(getScheduleUrl('basketball'), (basketballError, basketballResponse, basketballBody: string) => {
+            let status = 'NOT YET';
+            let score: number = 0;
+            let competitorScore: number = 0;
+            let competitorObject: IESPNCompetitorsJSON;
+            let competitor: string = '';
+            let summaryLink = '#';
+
             const footballSchedule: IESPNSchedule = JSON.parse(footballBody);
             const basketballSchedule: IESPNSchedule = JSON.parse(basketballBody);
-            const mostRecentEvent: IESPNPastEvent = getMostRecentEvent(
-                footballSchedule.events.concat(basketballSchedule.events)
-            );
+            const concatenatedEvents = footballSchedule.events.concat(basketballSchedule.events);
+            const mostRecentEvent: IESPNPastEvent = getMostRecentEvent(concatenatedEvents);
+            const nextEventStr = getNextEvent(concatenatedEvents);
 
-            let status = 'NOT YET';
             if (mostRecentEvent.competitions[0].status.type.completed) {
                 const winner = mostRecentEvent.competitions[0].competitors.find(competitor => competitor.winner);
                 // The winner may not be available yet if the game completed within the last few minutes
@@ -42,15 +48,13 @@ export const didWeWin = (req: Request, res: Response) => {
                     }
                 }
             }
-            let score: number = 0;
-            let competitorObject: IESPNCompetitorsJSON;
-            let competitor: string = '';
-            let competitorScore: number = 0;
+
             let us:
                 | IESPNPastCompetitorsJSON
                 | IESPNCurrentCompetitorsJSON = mostRecentEvent.competitions[0].competitors.find(
                 competitor => competitor.id === ESPN_TEAM_ID
             );
+
             const summaryLinkFound = mostRecentEvent.links.find(
                 link =>
                     (link.rel.includes('now') ||
@@ -59,7 +63,6 @@ export const didWeWin = (req: Request, res: Response) => {
                         link.rel.includes('summary')) &&
                     link.rel.includes('desktop')
             );
-            let summaryLink = '#';
             if (summaryLinkFound) {
                 summaryLink = summaryLinkFound.href;
             }
@@ -67,11 +70,12 @@ export const didWeWin = (req: Request, res: Response) => {
                 competitor => competitor.id !== ESPN_TEAM_ID
             );
             competitor = competitorObject.team.abbreviation;
+
             if (us.score) {
                 // Game is complete
                 score = us.score.value;
                 competitorScore = competitorObject.score.value;
-                render(res, summaryLink, status, score, competitor, competitorScore);
+                render(res, summaryLink, status, score, competitor, competitorScore, nextEventStr);
             } else {
                 // Game is currently happening, so we need to make a separate request since the schedule doesn't have current scores
                 request(
@@ -91,7 +95,7 @@ export const didWeWin = (req: Request, res: Response) => {
                             competitorScore = +competitorObject.score;
                             time = event.status.type.shortDetail;
                         }
-                        render(res, summaryLink, status, score, competitor, competitorScore, time);
+                        render(res, summaryLink, status, score, competitor, competitorScore, nextEventStr, time);
                     }
                 );
             }
@@ -106,6 +110,7 @@ export const render = (
     score: number,
     competitor: string,
     competitorScore: number,
+    nextEvent: string,
     time?: string
 ) => {
     res.render('pages/index', {
@@ -114,6 +119,7 @@ export const render = (
         score,
         competitor,
         competitorScore,
+        nextEvent,
         time,
     });
 };

@@ -1,5 +1,6 @@
 import moment from 'moment';
 import maxBy from 'lodash/maxBy';
+import minBy from 'lodash/minBy';
 
 import { IESPNPastEvent } from './interfaces';
 
@@ -14,4 +15,25 @@ export const getMostRecentEvent = (events: Array<IESPNPastEvent>): IESPNPastEven
         }),
         game => moment(game.date).valueOf()
     );
+};
+
+/**
+ * Returns the next event string
+ */
+export const getNextEvent = (events: Array<IESPNPastEvent>): string => {
+    const today = moment();
+    const nextEvent = minBy(
+        events.filter((event: IESPNPastEvent) => {
+            return moment(event.date).isAfter(today);
+        }),
+        game => moment(game.date).valueOf()
+    );
+    const nextDate = moment(nextEvent.date);
+    let date = nextDate.format('M/DD');
+    if (today.format('M/DD') === date) {
+        date = `today at ${nextDate.format('h:mma')}`;
+    } else {
+        date = `on ${date}`;
+    }
+    return `${nextEvent.shortName} ${date}`;
 };
