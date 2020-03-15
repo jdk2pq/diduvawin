@@ -2,7 +2,8 @@
  * Interfaces for JSON returned from the ESPN API
  */
 
-export interface IESPNScoreboardLinkJSON {
+export interface IESPNLinkJSON {
+    text: string;
     href: string;
     rel: string[];
 }
@@ -13,6 +14,7 @@ export interface IESPNCompetitorsJSON {
     id: string;
     team: {
         abbreviation: string;
+        links: Array<IESPNLinkJSON>;
     };
 }
 
@@ -78,7 +80,7 @@ export interface IESPNEvent {
     competitions: Array<any>;
     date: string;
     id: number;
-    links: IESPNScoreboardLinkJSON[];
+    links: IESPNLinkJSON[];
     name: string;
     season: {
         year: number;

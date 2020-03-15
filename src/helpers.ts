@@ -35,5 +35,8 @@ export const getNextEvent = (events: Array<IESPNPastEvent>): string => {
     } else {
         date = `on ${date}`;
     }
-    return `${nextEvent.shortName} ${date}`;
+    const sport = nextEvent.competitions[0].competitors[0].team.links[0].href.includes('basketball')
+        ? "Men's Basketball"
+        : 'Football';
+    return `${sport} ▸ ${nextEvent.shortName} ${date}`;
 };

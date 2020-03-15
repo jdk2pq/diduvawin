@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import request from 'request';
 
-import { ESPN_TEAM_ID } from './constants';
+import { ESPN_TEAM_ID, STATUSES } from './constants';
 import { getMostRecentEvent, getNextEvent } from './helpers';
 import { getCurrentGameUrl, getScheduleUrl } from './api';
 import {
@@ -34,8 +34,11 @@ export const didWeWin = (req: Request, res: Response) => {
             const footballSchedule: IESPNSchedule = JSON.parse(footballBody);
             const basketballSchedule: IESPNSchedule = JSON.parse(basketballBody);
             const concatenatedEvents = footballSchedule.events.concat(basketballSchedule.events);
-            const mostRecentEvent: IESPNPastEvent = getMostRecentEvent(concatenatedEvents);
-            const nextEventStr = getNextEvent(concatenatedEvents);
+            const nonCanceledEvents = concatenatedEvents.filter(
+                e => e.competitions[0].status.type.name !== STATUSES.CANCELED
+            );
+            const mostRecentEvent: IESPNPastEvent = getMostRecentEvent(nonCanceledEvents);
+            const nextEventStr = getNextEvent(nonCanceledEvents);
 
             if (mostRecentEvent.competitions[0].status.type.completed) {
                 const winner = mostRecentEvent.competitions[0].competitors.find(competitor => competitor.winner);
