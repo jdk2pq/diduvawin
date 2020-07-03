@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include ('../partials/header.ejs') %>
+    <%- include ('../partials/header.ejs') %>
 </head>
 <body>
 <div class="center">
-  <p id="result" class="<%= status.replace(/ /, '') %>">
-    <a href="<%= summaryLink %>"><%= status %></a>
-  </p>
-  <p id="score>">
-      <%= summaryLink.includes('basketball') ? 'Men\'s Basketball' : summaryLink.includes('football') ? 'Football' : '' %><%= score ? ` ▸ UVA: ${score}` : '' %><%= competitor ? ` - ${competitor}` : ''  %><%= competitorScore ? `: ${competitorScore}` : '' %><%= locals.time ? ` (${time})` : '' %>
-  </p>
-  <p id="nextGame">
-      Next: <%= nextEvent %>
-  </p>
+    <p id="result" class="<%= status.replace(/ /, '') %>">
+        <a href="<%= summaryLink %>"><%- status %></a>
+    </p>
+    <p id="score>">
+        <%= summaryLink.includes('basketball') ? 'Men\'s Basketball' : summaryLink.includes('football') ? 'Football' : '' %><%= score ? ` ▸ UVA: ${score}` : '' %><%= competitor ? ` - ${competitor}` : ''  %><%= competitorScore ? `: ${competitorScore}` : '' %><%= locals.time ? ` (${time})` : '' %>
+    </p>
+    <% if (nextEvent.length > 0) { %>
+        <p id="nextGame">
+            Next: <%= nextEvent %>
+        </p>
+    <% } %>
 </div>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
