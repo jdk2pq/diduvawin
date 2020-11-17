@@ -30,10 +30,16 @@ export const didWeWin = (req: Request, res: Response) => {
             let competitorObject: IESPNCompetitorsJSON;
             let competitor: string = '';
             let summaryLink = '#';
+            const concatenatedEvents: IESPNPastEvent[] = []
 
-            const footballSchedule: IESPNSchedule = JSON.parse(footballBody);
-            const basketballSchedule: IESPNSchedule = JSON.parse(basketballBody);
-            const concatenatedEvents = footballSchedule.events.concat(basketballSchedule.events);
+            if (footballBody) {
+                const footballSchedule: IESPNSchedule = JSON.parse(footballBody);
+                concatenatedEvents.push(...footballSchedule.events)
+            }
+            if (basketballBody) {
+                const basketballSchedule: IESPNSchedule = JSON.parse(basketballBody);
+                concatenatedEvents.push(...basketballSchedule.events)
+            }
             const nonCanceledEvents = concatenatedEvents.filter(
                 (e) => e.competitions[0].status.type.name !== STATUSES.CANCELED
             );
