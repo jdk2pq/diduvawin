@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.2",
-    "moment-timezone": "^0.5.28",
+    "moment-timezone": "^0.5.35",
     "request": "^2.88.2",
     "typescript": "^3.8.3"
   },
