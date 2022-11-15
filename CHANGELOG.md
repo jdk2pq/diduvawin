@@ -1,5 +1,12 @@
 # Unreleased
 
+# 1.3.0
+## Changed
+- Updated all dependencies
+- Reorganized `package.json`
+- Switched from `yarn` to `pnpm`
+- Switched from Heroku to Render
+
 # 1.2.0
 ## Changed
 - Removed node engine requirement from package.json

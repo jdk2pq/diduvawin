@@ -16,17 +16,17 @@ This is an unofficial UVA Men's Basketball and Football project made by Jake Ken
 If you're interested in building a similar page for your school, please get in contact (and feel free to use this app as your starting point).
 
 ## Wa-how?-wa
-A Node.js app using [Express](http://expressjs.com/) and built on Heroku.
+A Node.js app using [Express](http://expressjs.com/) and deployed to [Render](https://render.com/).
 
 The ESPN ID for UVA is stored in `constants.ts`. Upon load, the app makes two requests for schedules, one for football and one for men's basketball, and determines which game is the most recent game that is not in the future. Then, it figures out if the game is still ongoing. If it is, the app shows "NOT YET" and the score at the bottom of the page. Otherwise, it checks to see if UVA was the winner by matching on the ID in `constants.ts` and shows the appropriate message and scores from the game.
 
 ### Running locally
 To run this application locally, first run:
 
-    yarn
+    pnpm i
     
 to install all dependencies and build the `dist` directory. Then, run:
 
-    yarn serve
+    pnpm serve
     
 and go to [localhost:5000](http://localhost:5000) to view the site.
