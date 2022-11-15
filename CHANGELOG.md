@@ -1,5 +1,9 @@
 # Unreleased
 
+# 1.3.1
+## Added
+- #UVAStrong 🧡💙 1 15 41
+
 # 1.3.0
 ## Changed
 - Updated all dependencies
