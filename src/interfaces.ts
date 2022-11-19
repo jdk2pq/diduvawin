@@ -14,7 +14,7 @@ export interface IESPNCompetitorsJSON {
     id: string;
     team: {
         abbreviation: string;
-        links: Array<IESPNLinkJSON>;
+        links?: Array<IESPNLinkJSON>;
     };
 }
 

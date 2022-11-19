@@ -18,6 +18,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc && ncp src/public dist/public && ncp src/views dist/views",
+    "build-and-serve": "pnpm run build && pnpm run serve",
     "postinstall": "pnpm run build",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "start": "pnpm run serve",

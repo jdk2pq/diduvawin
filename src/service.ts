@@ -24,7 +24,7 @@ import {
 export const didWeWin = (req: Request, res: Response) => {
     request(getScheduleUrl('football'), (footballError, footballResponse, footballBody: string) => {
         request(getScheduleUrl('basketball'), (basketballError, basketballResponse, basketballBody: string) => {
-            let status = 'HOPEFULLY.<br>STAY SAFE!';
+            let status = 'NOT YET';
             let score: number = 0;
             let competitorScore: number = 0;
             let competitorObject: IESPNCompetitorsJSON;
